@@ -1,17 +1,13 @@
 fn main() {
-    //an array is specified by [type, num_elements]
-    let typed_array: [i32; 5] = [1, 2, 3, 4, 5];
+    // The values in a tuple need not share the same type
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
 
-    //instead of specifying the type explicitly, 
-    //the array can also be initialized to a particular value
-    let _initialized_array = [3; 5];
+    //The variable binds to the entire tuple, so in order
+    //to get individual elements out, we destructure it
+    //via pattern matching
+    let tup = (500, 6.4, 1);
 
-    //array indexing
-    let three = typed_array[2];
+    let (x, y, z) = tup;
 
-    //tuple type
-    let tuple = (8, 9, 10);
-
-    //tuple indexing
-    let nine = tuple.1;
+    println!("The value of y is: {}", y);
 }
